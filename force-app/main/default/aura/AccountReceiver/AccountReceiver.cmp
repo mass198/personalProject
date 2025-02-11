@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <aura:handler name="accountFired" event="c:AccountFired" action="{!c.handleAccount}"/>
+    <aura:attribute name="account" type="Object"/>
+    <lightning:card title="Account Details">
+        <div class="slds-p-horizontal_small">
+            <p>Name: {!v.account.Name}</p>
+            <p>Industry: {!v.account.Industry}</p>
+            <p>Phone: {!v.account.Phone}</p>
+        </div>
+    </lightning:card>
+
+
+</aura:component>
