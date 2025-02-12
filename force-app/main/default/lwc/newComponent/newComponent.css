@@ -1,0 +1,17 @@
+body{
+        background-color: lightblue;
+}
+
+lightning-card{
+    color: rgb(54, 42, 226);
+    text-align: center;
+}
+
+div{
+    background-color: rgb(171, 140, 209); 
+}
+
+lightning-button{
+
+    background-color: rgb(202, 9, 35);
+}

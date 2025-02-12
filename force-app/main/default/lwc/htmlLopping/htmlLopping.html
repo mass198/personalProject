@@ -1,0 +1,47 @@
+<template>
+  <lightning-card>
+    <div>
+      <h6><strong>This is HTML loopoing</strong></h6>
+    </div>
+
+    <div class="slds-m-around_medium">This is for each looping</div>
+
+    <template for:each={companylist} for:item="list">
+      <ul key={list} class="slds-has-dividers_around-space">
+        <li class="slds-item">{list}</li>
+      </ul>
+    </template>
+
+    <div class="slds-m-around_medium">
+      This is for each looping - in objects in an array
+    </div>
+
+    <template for:each={comp} for:item="clist">
+      <ul key={clist.id} class="slds-has-dividers_around-space">
+        <li class="slds-item">
+          <strong>{clist.cname}</strong> {clist.location}
+        </li>
+      </ul>
+    </template>
+
+    <div class="slds-m-around_medium">
+      This is iterator looping - in objects in an array
+    </div>
+
+    <template iterator:clistname={comp}>
+      <div key={clistname.id} class="slds-has-dividers_around-space">
+        <ul class="slds-var-m-around_medium">
+          <div if:true={clistname.first}>
+            <strong> Here is the list of the companies</strong>
+          </div>
+          <li class="slds-item">
+            <strong>{clistname.value.cname}</strong> {clistname.value.location}
+          </li>
+          <div if:true={clistname.last}>
+            Please provide your valuable feedback
+          </div>
+        </ul>
+      </div>
+    </template>
+  </lightning-card>
+</template>

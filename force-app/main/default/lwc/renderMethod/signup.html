@@ -1,0 +1,35 @@
+<template>
+  <lightning-card title="This is Sign Up page">
+    <h1 class="slds-text-heading_medium">
+      Please fill the below form for Signing Up
+    </h1>
+    <lightning-input
+      label="First Name"
+      title="firstname"
+      type="text"
+    ></lightning-input>
+    <lightning-input
+      label="Last Name"
+      title="lastname"
+      type="text"
+    ></lightning-input>
+    <lightning-input label="Email" title="email" type="email"></lightning-input>
+    <lightning-input
+      label="Password"
+      title="password"
+      type="text"
+    ></lightning-input>
+    <lightning-button
+      label="Sign Up"
+      variant="success"
+      title="signup"
+      onclick={submithandler}
+    ></lightning-button>
+    <lightning-button
+      label="Previous Page"
+      variant="brand"
+      title="back"
+      onclick={formhandler}
+    ></lightning-button>
+  </lightning-card>
+</template>

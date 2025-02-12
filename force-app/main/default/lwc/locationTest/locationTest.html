@@ -1,0 +1,112 @@
+<template>
+  <lightning-card>
+    <h3 slot="title">
+      <lightning-icon
+        icon-name="standard:service_appointment"
+        size="small"
+      ></lightning-icon>
+      Service Appointment
+    </h3>
+    <p class="slds-p-horizontal_small">
+      SA Number &nbsp;:&nbsp;&nbsp;{apptNumber}
+    </p>
+    <p class="slds-p-horizontal_small">
+      SA Status &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{apptStatus}
+    </p>
+    <p class="slds-p-horizontal_small">
+      Latitude
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;{varLocnLat}
+    </p>
+    <p class="slds-p-horizontal_small">
+      Longitude &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{varLocnLong}
+    </p>
+    <br />
+    <lightning-map map-markers={currentLocationAsMarker} zoom-level="16"
+      ><br />
+    </lightning-map>
+  </lightning-card>
+  <div class="slds-p-left_medium">
+    <template lwc:if={varDispatch}>
+      <lightning-radio-group
+        name="radioGroup"
+        options={dispatchOptns}
+        value={value}
+        onchange={fetchValue}
+        type="radio"
+      >
+      </lightning-radio-group
+      ><br />
+      <lightning-button
+        variant="brand"
+        icon-name="utility:target"
+        label="Next"
+        class="slds-align_absolute-center"
+        title="Update the SA to In Route Check In"
+        onclick={saveAppt}
+      >
+      </lightning-button>
+    </template>
+  </div>
+  <div class="slds-p-left_medium">
+    <template lwc:if={varCheckIn}>
+      <lightning-radio-group
+        name="radioGroup"
+        options={checkInOptns}
+        value={value}
+        onchange={fetchValue}
+        type="radio"
+      >
+      </lightning-radio-group
+      ><br />
+      <lightning-button
+        variant="brand"
+        icon-name="utility:target"
+        label="Next"
+        class="slds-align_absolute-center"
+        title="Update the SA to In Route Check In"
+        onclick={saveAppt}
+      >
+      </lightning-button>
+    </template>
+  </div>
+  <div class="slds-p-left_medium">
+    <template lwc:if={varCheckOut}>
+      <lightning-radio-group
+        name="radioGroup"
+        options={checkOutOptns}
+        value={value}
+        onchange={fetchValue}
+        type="radio"
+      >
+      </lightning-radio-group
+      ><br />
+      <lightning-button
+        variant="brand"
+        icon-name="utility:target"
+        label="Next"
+        class="slds-align_absolute-center"
+        title="Update the SA to In Route Check In"
+        onclick={saveAppt}
+      >
+      </lightning-button>
+    </template>
+  </div>
+  <div>
+    <template lwc:if={varSAComplete}>
+      <br />
+      <p class="slds-p-horizontal_medium slds-align_absolute-center">
+        Status cannot be Changed on this Service Appointment
+      </p>
+      <br /><br />
+      <lightning-button
+        variant="brand"
+        icon-name="utility:target"
+        class="slds-align_absolute-center"
+        label="Next"
+        title="Close LWC as SA is Checked Out"
+        onclick={navigateBackToSA}
+      >
+      </lightning-button>
+    </template>
+  </div>
+</template>

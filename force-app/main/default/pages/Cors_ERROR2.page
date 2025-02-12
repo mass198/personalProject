@@ -1,0 +1,31 @@
+<apex:page >
+  <script>
+      function requestResource(){
+          var resourceUrlElem = document.getElementById("resourceUrlInput"),
+              resourceUrlVal = resourceUrlElem && resourceUrlElem.value;
+          // If we don't have a value, return now.
+          if (!resourceUrlVal) return;
+          // Otherwise, build our request.
+          var req = new XMLHttpRequest();
+          req.open("GET", resourceUrlVal);
+          req.setRequestHeader("Accept", "text/plain, */*; q=0.01");
+          req.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+          req.onload = function() {
+            console.log("loaded!");
+          };
+          req.onerror = function() {
+            console.log("error");
+          };
+          req.timeout = function() {
+            console.log("request timed out");
+          };
+
+          req.send();
+      }
+  </script>
+  
+  <p>Enter the resource URL here (can be absolute or relative):</p>
+  <input type="text" id="resourceUrlInput" style="width:400px;"/>
+  <button type="button" id="requestButton" onclick="requestResource();">Request resource</button>
+</apex:page>

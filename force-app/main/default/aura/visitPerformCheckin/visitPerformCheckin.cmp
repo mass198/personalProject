@@ -1,0 +1,76 @@
+<aura:component controller="PerformVisitController" 
+    implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global">
+
+    <aura:attribute name="step" type="Decimal" default="1" />
+    <aura:attribute name="totalErrors" type="Decimal" default="1" />
+    <aura:attribute name="totalOutOfRange" type="Decimal" default="1" />
+    <aura:attribute name="lat" type="Decimal" />
+    <aura:attribute name="lon" type="Decimal" />
+    <aura:attribute name="latVisit" type="Decimal" />
+    <aura:attribute name="lonVisit" type="Decimal" />
+    <aura:attribute name="checkinType" type="String" />
+    <aura:attribute name="attributesSelected" type="String" />
+    <aura:attribute name="attributes" type="List" />
+    <aura:attribute name="checkinTypes" type="List"
+        default="[
+            {label: 'Atividade presencial (CheckIn)', value: 'VisitPlan'},
+            {label: 'Atividade remota (Sem CheckIn)', value: 'NotPresencial'}
+        ]"
+    />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.step == 1}">
+        <lightning:layout multipleRows="true">
+            <div style="margin-top: 20%; width: 100%;">
+
+                <lightning:layoutItem size="12">
+                    <lightning:select label="Qual o tipo de atividade?" value="{!v.checkinType}">
+                        <option text="Selecione" value="" />
+                        <aura:iteration items="{!v.checkinTypes}" var="item">
+                            <option text="{!item.label}" value="{!item.value}" />
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+
+                <lightning:layoutItem size="12">
+                    <div class="slds-align_absolute-center" style="height:5rem">
+                        <lightning:button label="Cancelar" title="Cancelar" onclick="{!c.cancelCheckin}" />
+                        <lightning:button variant="brand" label="Prosseguir" title="Prosseguir"
+                            onclick="{!c.onSelectedType}" />
+                    </div>
+                </lightning:layoutItem>
+
+            </div>
+        </lightning:layout>
+    </aura:if>
+
+    <aura:if isTrue="{!v.step == 2}">
+            <lightning:dualListbox label="Selecione os atributos que realizará o check-in." sourceLabel="Disponíveis"
+                selectedLabel="Selecionados" value="{!v.attributesSelected}" options="{!v.attributes}" />
+
+            <div class="slds-align_absolute-center" style="height:5rem">
+                <lightning:button label="Voltar" title="Voltar" onclick="{!c.onBackRequest}" />
+                <lightning:button variant="brand" label="Prosseguir" title="Prosseguir"
+                    onclick="{!c.onAttributesNext}" />
+            </div>
+    </aura:if>
+
+    <aura:if isTrue="{!v.step == 3}">
+        <div style="margin-top: 20%;">
+            <aura:if isTrue="{!and( empty(v.lat), and(empty(v.lon), notequals(v.checkinType, 'NotPresencial')))}">
+                <div class="slds-text-heading_large slds-align_absolute-center"
+                    style="height:5rem; text-align: center;">
+                    Permita
+                    que o Salesforce
+                    tenha acesso à sua
+                    localização.</div>
+                <aura:set attribute="else">
+                    <div class="slds-text-heading_large slds-align_absolute-center"
+                        style="height:5rem; text-align: center;">O check-in está sendo realizado.</div>
+                </aura:set>
+            </aura:if>
+        </div>
+    </aura:if>
+
+</aura:component>

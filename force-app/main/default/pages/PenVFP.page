@@ -1,0 +1,27 @@
+<apex:page standardcontroller="Account">
+    <apex:form >
+        <apex:pageblock title="Account Info">
+         <apex:pageblockbuttons >
+             <apex:commandbutton action="{!save}" value="save now"/>
+            </apex:pageblockbuttons>   
+            
+            <apex:pageblocksection title="Account Customer Details" columns="2">
+                <apex:inputfield value="{!Account.Name}" />
+                 <apex:inputfield value="{!Account.Accountnumber}" />
+                <apex:inputfield value="{!Account.AnnualRevenue}" /> 
+              
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection title="Personal Details" columns="3">
+            
+            <apex:inputfield value="{!Account.DandbCompanyId}" />
+            <apex:inputfield value="{!Account.CleanStatus}" />
+            <apex:inputfield value="{!Account.CustomerPriority__c}" />
+                <apex:inputfield value="{!Account.DunsNumber}" />
+                
+                
+            </apex:pageblocksection>
+            
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

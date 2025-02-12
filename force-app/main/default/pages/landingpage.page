@@ -1,0 +1,3 @@
+<apex:page showHeader="false" cache="false">
+<apex:image url="{!URLFOR($Resource.logogot)}" styleClass="img"/>
+</apex:page>

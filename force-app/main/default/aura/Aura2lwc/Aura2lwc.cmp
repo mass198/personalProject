@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+  <aura:attribute name="message" type="string"> </aura:attribute>
+
+  <lightning:card title="This is from Aura Component">
+    <div>Message = {!v.message}</div>
+    <c:lwc2Aura
+      onsendaura="{!c.msgfromLWC}"
+      title="This is from parent Aura"
+    ></c:lwc2Aura>
+  </lightning:card>
+</aura:component>

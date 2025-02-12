@@ -1,0 +1,16 @@
+<apex:page controller="CCEXAMPLE" >
+    <apex:form >
+    <apex:pageblock title="Insurance Form"> 
+      <apex:pageblocksection title="health insurance" columns="2">
+        <apex:outputlabel > Enter Name : </apex:outputlabel>
+        <apex:inputtext value="{!UserName}"/>
+        <apex:commandButton value="click me" action="{!showmessage}"/>
+<apex:outputLabel > {!Message} </apex:outputLabel>        
+        </apex:pageblocksection>
+        </apex:pageblock>
+        
+        
+    </apex:form>
+    
+    
+</apex:page>

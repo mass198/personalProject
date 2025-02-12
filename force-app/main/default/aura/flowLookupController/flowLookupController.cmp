@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:availableForFlowScreens" access="global" controller="FlowLookupController" >
+	<aura:attribute name="label" type="String" access="global" />
+    <aura:attribute name="object" type="String" access="global" />
+    <aura:attribute name="inpField" type="String" access="global" />
+    <aura:attribute name="inpValue" type="String" access="global" />
+    <aura:attribute name="resValue" type="String" access="global" />
+    <aura:attribute name="resLabel" type="String" access="global" />
+    <aura:attribute name="extraconditions" type="String" access="global" />
+    <!-- Component Attributes -->
+    <aura:attribute name="searchText" type="String" access="public" />
+    <aura:attribute name="searchResult" type="String" access="public" />
+    
+    <div onkeyup="{! c.handleInputKeyUp }">
+        <lightning:input
+                         aura:id="enter-search"
+                         name="enter-search"
+                         label="{!v.label}"
+                         type="search"
+                         value="{!v.searchText}"
+                         />
+    </div>
+    
+    <lightning:combobox name="combo-result" variant="label-hidden" options="{! v.searchResult }" onchange="{! c.handleComboChange }"/>
+</aura:component>

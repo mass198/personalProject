@@ -1,0 +1,13 @@
+<template>
+    
+    <Lightning-card title="show the companies list">
+        <template for:each={ArrayDataHere} for:item="cd">
+             <li key={cd.company}>
+                IndustryName : {cd.company} | Operational : {cd.working}, {cd.type}
+                <br>
+
+             </li>
+        </template>
+        <lightning-button label="Show Data" onclick={showDataHandler}></lightning-button>
+    </Lightning-card>
+</template>

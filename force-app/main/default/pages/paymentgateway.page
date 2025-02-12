@@ -1,0 +1,40 @@
+<apex:page controller="PaymentFormController">
+    <form
+        method="POST"
+        action="https://sbcheckout.payfort.com/FortAPI/paymentPage"
+        id="paymentForm"
+        name="paymentForm"
+    >
+        <label>Service Command:</label>
+        <input type="text" name="command" value="{!serviceCommand}" readonly="readonly" />
+          
+        <label>Merchant Identifier:</label>
+        <input type="text" name="merchant_identifier" value="{!merchantIdentifier}" readonly="readonly" />
+
+        <label>Access Code:</label>
+        <input type="text" name="access_code" value="{!accessCode}" readonly="readonly" />
+        
+        <label>Amount:</label>
+        <input type="Number" name="amount" value="{!Amount}" />
+        
+        <label>Currency:</label>
+        <input type="text" name="currency" value="{!Curency}" />
+
+        <label>Signature:</label>
+        <input type="text" name="signature" value="{!signature}" readonly="readonly" />
+
+        <label>Email:</label>
+        <input type="text" name="customer_email" value="{!Email}" readonly="readonly" />
+
+        <label>Merchant Reference:</label>
+        <input type="text" name="merchant_reference" value="{!merchantReference}" readonly="readonly" />
+        
+        <label>Order Description:</label>
+        <input type="text" name="order_description" value="{!orderdescription}" />
+
+        <label>Language:</label>
+        <input type="text" name="language" value="{!language}" readonly="readonly" />
+
+        <button type="submit">Submit Payment</button>
+    </form>
+</apex:page>

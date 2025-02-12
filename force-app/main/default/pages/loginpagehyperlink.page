@@ -1,0 +1,8 @@
+<apex:page showHeader="false" cache="false">
+   
+            <img src="{!URLFOR($Resource.logogot)}" alt="Company Logo" class="logo"/>
+            <br></br>
+            
+            <a href="https://login.salesforce.com" target="_blank" class="link">Visit Our Website</a>
+       
+</apex:page>

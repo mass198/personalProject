@@ -1,0 +1,4 @@
+@import 'c/sharedLibrary';
+
+.mass{width:90%;
+background-color: green;}

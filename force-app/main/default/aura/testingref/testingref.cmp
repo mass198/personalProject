@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="Oppprod" type="Object"/>
+     <lightning:card
+    title="This gets the reference name"
+  >
+    <force:recordData aura:id="recordLoaderLineItem"
+                      recordId="{!v.recordId}"
+                      fields="Product2Id, Opportunity.AccountId, Opportunity.Account.PersonMailingPostalCode, Opportunity.Contact__c, Opportunity.Contact__r.Name"
+                      targetFields="{!v.Oppprod}"
+                      targetError="{!v.recordLoadError}"
+                      recordUpdated="{!c.onloading}"
+                      mode="VIEW"
+                      />
+    <div class="slds-p-around_medium">
+    <lightning:formattedText value="{!v.pid}" /> 
+         </div>
+</lightning:card>
+	
+</aura:component>

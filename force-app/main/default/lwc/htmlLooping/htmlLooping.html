@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="for each html loop">
+      <template for:each={arr1} for:item="words">
+      <ul key={words}>
+
+      <li>{words}</li>
+      </ul>
+      </template>
+    </lightning-card>
+
+    <lightning-card title="for each html loop for objects in array">
+      <template for:each={listofcompanies} for:item="companynames">
+        <ul key={companynames.id}>
+    
+          <li>{companynames.name} {companynames.place}</li>
+        </ul>
+      </template>
+    </lightning-card>
+
+    <lightning-card title="iterator html loop for objects in array">
+      <template iterator:itlist={listofcompanies}>
+
+       
+        <ul key={itlist.value.id}>
+
+          <div if:true={itlist.first}> list of companies</div>
+    
+          <li>{itlist.value.name} {itlist.value.place}</li>
+
+          <div if:true={itlist.last}> thank you</div>
+        </ul>
+      </template>
+    </lightning-card>
+</template>

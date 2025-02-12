@@ -1,0 +1,38 @@
+<apex:page standardController="Account">
+    <table align="center">
+        <tr>
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="test_account_report" filter="[{column:'ACCOUNT_ID',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                
+            </td>
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="Account_Past_Term_Inventory" filter="[{column:'ACCOUNT_ID',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                
+            </td>  
+        </tr>
+        <tr>     
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="PDSS_Open_Project_by_Type_KPI_t1t" filter="[{column:'Account.Id',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                                
+            </td>          
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="PDSS_Open_Project_by_Type_CLIENT_Ynb" filter="[{column:'Account.Id',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                
+            </td>
+        </tr>
+        <tr>     
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="Account_Orders_YoY_This_Month" filter="[{column:'Account.Id',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                                
+            </td>          
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="Account_Orders_YoY_Current_Year" filter="[{column:'Account.Id',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>                
+            </td>
+        </tr>     
+        <tr>
+            <td>
+                <analytics:reportChart cacheResults="false" developerName="Account_Current_Pipeline_by_Stage" filter="[{column:'ACCOUNT_ID',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>
+            </td>   
+           <!-- <td>
+                <analytics:reportChart cacheResults="false" developerName="Account_Order_count_by_Print_Item" filter="[{column:'Account.Id',operator:'equals',value:'{!Account.Id}'}]" size="small"></analytics:reportChart>
+            </td>
+             -->    
+        </tr>      
+    </table>
+
+</apex:page>

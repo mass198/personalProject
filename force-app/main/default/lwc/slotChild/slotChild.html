@@ -1,0 +1,12 @@
+<template>
+  <lightning-card>
+    <div>What is your name?</div>
+    <slot name="name"></slot>
+
+    <div>What is your Age?</div>
+    <slot name="age"></slot>
+
+    <footer class="slds-card__footer slds-hide">
+      <slot name="footer" onslotchange={changehandlerslot}></slot></footer
+  ></lightning-card>
+</template>

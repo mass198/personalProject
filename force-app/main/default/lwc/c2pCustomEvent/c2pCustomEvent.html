@@ -1,0 +1,11 @@
+<template>
+  <lightning-button
+    label="show Modal"
+    onclick={truehandler}
+    variant="brand"
+  ></lightning-button>
+  <template if:true={showMod}>
+    <c-cust-event-child onclosethemod={clshndlr}></c-cust-event-child
+  ></template>
+  <div>{msg}</div>
+</template>

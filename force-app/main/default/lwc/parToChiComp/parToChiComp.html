@@ -1,0 +1,9 @@
+<template>
+  <lightning-card title="This component is created for Interview learning purpose">
+    <lightning-input type="text" label="Name" onchange={namehandler}></lightning-input>
+    <lightning-input type="number" label="Age" onchange={agehandler}></lightning-input>
+    <div>This value is from child {recvalue}</div>
+
+    <c-chi-to-par-comp onsendmessage={recievedvalue} student-name={stuName} age={stuAge}></c-chi-to-par-comp>
+  </lightning-card>
+</template>

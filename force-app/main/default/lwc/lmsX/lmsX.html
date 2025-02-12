@@ -1,0 +1,17 @@
+<template>
+  <lightning-card title="This uses LMS to Publish">
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-input
+      type="string"
+      label="Enter Message to Publish"
+      onkeyup={callhandler}
+    ></lightning-input>
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-button
+      variant="brand"
+      label="Publish"
+      onclick={publishmessagehandler}
+      class="slds-var-m-around_medium"
+    ></lightning-button>
+  </lightning-card>
+</template>

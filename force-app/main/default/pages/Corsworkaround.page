@@ -1,0 +1,13 @@
+<apex:page controller="ReqController" >
+
+<apex:form >
+
+  <apex:inputText value="{!inputValue}"/>
+
+<apex:commandButton value="Get Static Resource" action="{!getStaticResource}"/>
+
+  </apex:form>
+
+  {!staticResource}
+
+</apex:page>

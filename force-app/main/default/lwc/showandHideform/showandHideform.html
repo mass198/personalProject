@@ -1,0 +1,19 @@
+<template>
+    <lightning-card tile="Form For Patient Enrollment">
+        <template if:true = {booleanflagvalue}>
+        <lightning-input type="text" label = "Patient Name"></lightning-input>
+        <lightning-input type="text" label = "Disease"></lightning-input>
+        <lightning-input type="text" label = "Phone"></lightning-input>
+        <lightning-input type="text" label = "Address"></lightning-input>
+        <lightning-input type="text" label = "Care Taker Name"></lightning-input>
+        <lightning-input type="text" label = "Care taker Number"></lightning-input>
+
+        <lightning-button label="Hide Form" onclick={hideformhandler}></lightning-button> 
+    </template>
+
+    <template if:false = {booleanflagvalue}>
+        <lightning-button label="show Form" onclick={showformhandler}></lightning-button> 
+    </template>
+
+    </lightning-card>
+</template>

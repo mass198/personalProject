@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Sales Timer" >
+        <div >{timeVal}</div>
+
+        <template if:true ={showStartButton}>
+        <lightning-button label="start" variant="success" onclick={startHandler}></lightning-button>
+    </template>
+
+    <template if:false ={showStartButton}>
+        <lightning-button label="stop" variant="destructive" onclick={stopHandler}></lightning-button>
+    </template>
+
+    <lightning-button label="Reset"  onclick={resetHandler}></lightning-button>
+        
+    </lightning-card>
+    
+</template>

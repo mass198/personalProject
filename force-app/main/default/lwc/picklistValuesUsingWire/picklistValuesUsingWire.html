@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="This is getting picklist values from wire adapter">
+
+        <lightning-combobox name="Industry picklist Values" label="Industry" value={selectvalue}
+            placeholder="Select Industry" options={IndustryOptions} onchange={handleChange}></lightning-combobox>
+
+        <p>Selected value is: {selectvalue}</p>
+
+    </lightning-card>
+</template>

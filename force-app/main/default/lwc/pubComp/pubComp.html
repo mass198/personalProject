@@ -1,0 +1,15 @@
+<template>
+  <lightning-card>
+    <h6 style="color: red">This Component Publishes Event</h6>
+    <lightning-input
+      label="Type Text Type"
+      type="text"
+      onkeyup={callhandler}
+    ></lightning-input>
+    <lightning-button
+      variant="brand"
+      label="publish Event"
+      onclick={publishEventhandler}
+    ></lightning-button>
+  </lightning-card>
+</template>

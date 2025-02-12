@@ -1,0 +1,30 @@
+<aura:component implements="lightning:appHomeTemplate" access="global" description="5 columns flexible without header and footer." >
+    <!-- Make attribute for each column -->
+    <aura:attribute name="column1" type="Aura.Component[]" description="Column1"/>
+    <aura:attribute name="column2" type="Aura.Component[]" description="Column2"/>
+    <aura:attribute name="column3" type="Aura.Component[]" description="Column3"/>
+    <aura:attribute name="column4" type="Aura.Component[]" description="Column4"/>
+    <aura:attribute name="column5" type="Aura.Component[]" description="Column5"/>
+   
+    
+    <div>
+        <!-- Specify the area for each column -->
+        <lightning:layout  pullToBoundary="small">
+            <lightning:layoutItem size="2" padding="around-small">
+                {!v.column1}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">         
+                {!v.column2}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">         
+                {!v.column3}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">         
+                {!v.column4}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">         
+                {!v.column5}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div> 
+</aura:component>

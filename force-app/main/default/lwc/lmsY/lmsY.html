@@ -1,0 +1,23 @@
+<template>
+  <lightning-card title="This subscribes to a LMS message">
+    <div>
+      Message = <strong class="slds-text-color_success">{recMessage}</strong>
+    </div>
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        class="hidenow"
+        label="unsubscribe"
+        variant="brand"
+        onclick={unsub}
+      ></lightning-button>
+    </div>
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        class="second slds-hide"
+        label="subscribe"
+        variant="brand"
+        onclick={resub}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

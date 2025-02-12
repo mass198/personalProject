@@ -1,0 +1,31 @@
+<template>
+  <lightning-card title="This is my parent Component">
+    <c-p2calert-comp message="This is from parent component"> </c-p2calert-comp>
+
+    <div class="slds-var-m-around_medium"></div>
+
+    <c-p2c-carousel-cjild-comp get-details={getcardDetails}>
+    </c-p2c-carousel-cjild-comp>
+
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-input
+      type="number"
+      label="Enter Percentage"
+      onkeyup={sendtochild}
+      value={perce}
+    >
+    </lightning-input>
+    <c-child-progress-bar perce-value={perce}> </c-child-progress-bar>
+
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-button
+      variant="brand"
+      label="Reset Value"
+      title="Primary action"
+      onclick={resetClick}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+
+    <c-slider-child-comp></c-slider-child-comp>
+  </lightning-card>
+</template>

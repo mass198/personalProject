@@ -1,0 +1,17 @@
+<apex:page standardcontroller="Order" sidebar="false" showHeader="false" lightningStylesheets="true">
+    <style type="text/css">
+        .iframeSize { font-style: italic;
+        height: 500px;
+        width: 100%;
+        }
+    </style>
+    
+    <apex:outputPanel id="pdf" rendered="{}">
+        <object data="data:application/pdf;base64" class="iframeSize"></object>
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="error" rendered="{}">
+        {}
+    </apex:outputPanel>
+    
+</apex:page>

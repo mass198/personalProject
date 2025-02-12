@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Get account using the names from wire.">
+        <lightning-input label="search Accounts" onchange={callwire}></lightning-input>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="ac">
+                <div key={ac.id}>
+                    <p> Account Name : {ac.Name}</p>
+                </div>
+            </template>
+        </template>
+        <div> value from event listen is {msg}</div>
+    </lightning-card>
+</template>

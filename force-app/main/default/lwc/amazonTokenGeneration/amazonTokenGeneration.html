@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Amazon Payment Tokenization" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input data-id="cardNumber" label="Card Number" value={cardNumber} onchange={handleInput} default="4005550000000001"></lightning-input>
+            <lightning-input data-id="expiryDate" label="Expiry Date (MMYY)" value={expiryDate} onchange={handleInput} default="2105"></lightning-input>
+            <lightning-input data-id="cardCVV" label="CVV" type="password" value={cardCVV} onchange={handleInput} default="123"></lightning-input>
+            <lightning-input data-id="cardHolderName" label="Card Holder Name" type="Text" value={cardHolderName} onchange={handleInput} default="John Smith"></lightning-input>
+            <lightning-button label="Tokenize" onclick={tokenizeCard}></lightning-button>
+        </div>
+        <div if:true={token}>
+            <p>Token: {token}</p>
+        </div>
+        <div if:true={error}>
+            <p>Error: {error}</p>
+        </div>
+    </lightning-card>
+</template>

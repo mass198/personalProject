@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+    <h6><strong>This is Two way Data binding</strong></h6>
+    <lightning-input slds-m-around_small slds-p-around_medium label="Name" onchange={getName}></lightning-input>
+    <lightning-input slds-m-around_small slds-p-around_medium label="Role" onchange={getRole}></lightning-input>
+    <lightning-input slds-m-around_small slds-p-around_medium label="city" onchange={getaddress}></lightning-input>
+    <lightning-input slds-m-around_small slds-p-around_medium label="state" onchange={getaddress}></lightning-input>
+    <lightning-input slds-m-around_small slds-p-around_medium label="country" onchange={getaddress}></lightning-input>
+
+    <div class="slds-var-m-around_medium">Your Name is {Name} and your role is {role}</div>
+    <div>Your address is {Youraddress}</div>
+</lightning-card>
+
+<lightning-card>
+    <h6><strong>Track</strong></h6>
+    
+    <lightning-input slds-m-around_small slds-p-around_medium label="city" onchange={trackhandler}></lightning-input>
+   
+
+    <div class="slds-var-m-around_medium">Your city is {address.city}</div>
+   
+</lightning-card>
+
+<lightning-card>
+    <h6><strong>Getter Properties</strong></h6>
+    <div class="slds-var-m-around_medium">Your first user name  is {firstuser} {firstusername}</div>
+   
+</lightning-card>
+</template>

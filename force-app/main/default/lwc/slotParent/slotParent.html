@@ -1,0 +1,16 @@
+<template>
+  <lightning-card
+    ><header>This is a slot parent componet</header>
+    <c-slot-child
+      ><p class="slds-text-color_success" slot="name">My name is Mass</p>
+      <p class="slds-text-color_error" slot="age">My age is 25</p>
+      <p slot="footer">This is Footer</p>
+    </c-slot-child>
+
+    <c-slot-child
+      ><p class="slds-text-color_success" slot="name">My name is Mass</p>
+      <p class="slds-text-color_error" slot="age">My age is 25</p>
+      <!-- <p slot="footer">This is Footer</p>  -->
+    </c-slot-child>
+  </lightning-card>
+</template>

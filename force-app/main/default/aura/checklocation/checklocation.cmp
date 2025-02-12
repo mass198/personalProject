@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<!-- CheckInLocation.cmp -->
+
+    <aura:attribute name="checkInOption" type="String" default="Working from Home" />
+    <aura:attribute name="showCheckInButton" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div>
+        <h2>Check In Location</h2>
+        <p>Logged In From: {!v.checkInOption}</p>
+        <aura:if isTrue="{!v.showCheckInButton}">
+            <button onclick="{!c.checkIn}">Check In</button>
+        </aura:if>
+    </div>
+</aura:component>

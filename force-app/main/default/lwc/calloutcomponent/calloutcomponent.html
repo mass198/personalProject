@@ -1,0 +1,20 @@
+<template>
+
+    <lightning-button label="Get Spoonacular reciepe" onclick={makeCallout}></lightning-button>
+
+
+    <template if:true={response}>
+        <p>The Request Status code is : {statusCode}</p>
+        <div></div>
+        <p>The Response is : {response}</p>
+
+    </template>
+    <template if:true={errormsg}>
+
+        <p>The Request Status code is : {statusCode}</p>
+
+        <div></div>
+        <p>The error is : {errormsg}</p>
+    </template>
+
+</template>

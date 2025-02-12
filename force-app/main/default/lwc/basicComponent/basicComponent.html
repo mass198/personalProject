@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="create Pen">
+        <lightning-layout>
+            <!-- <lightning-record-form onsuccess={call_this}> -->
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="Create A New Account">
+                    <lightning-input name="Account Name" label="Name" onchange={namechangehandler}></lightning-input>
+                    <lightning-input name="Price" type="number" label="Price"
+                        onchange={pricechangehandler}></lightning-input>
+                    <lightning-input name="Quantity" type="number" label="Quantity"
+                        onchange={quantitychangehandler}></lightning-input>
+
+                    <lightning-button label="Create Pen" onclick={createAccount} variant="brand"></lightning-button>
+                </lightning-card>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+
+            </lightning-layout-item>
+            <!-- </lightning-record-form> -->
+
+        </lightning-layout>
+    </lightning-card>
+</template>

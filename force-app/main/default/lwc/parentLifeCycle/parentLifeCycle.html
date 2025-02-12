@@ -1,0 +1,25 @@
+<template>
+  <lightning-card title="This is Parent Component">
+    <template if:false={isVisible}>
+      <lightning-button
+        variant="brand"
+        onclick={showComponentHandler}
+        label="show Child"
+        title="show Child Component"
+      >
+        Success lightning-button
+      </lightning-button></template
+    >
+
+    <template if:true={isVisible}>
+      <c-child-life-cycle></c-child-life-cycle>
+      <lightning-button
+        variant="brand"
+        label="Hide Child"
+        onclick={showComponentHandler}
+        title="show parent Component"
+        >Destructive lightning-button</lightning-button
+      >
+    </template>
+  </lightning-card>
+</template>

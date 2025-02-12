@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Updating record in the datatable using wire service">
+    <div style="height: 300px">
+      <lightning-datatable
+        key-field="Id"
+        data={contacts}
+        columns={columns}
+        onsave={handleSave}
+        hide-checkbox-column
+        draft-values={draftValues}
+      >
+      </lightning-datatable>
+    </div>
+  </lightning-card>
+</template>

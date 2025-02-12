@@ -1,0 +1,26 @@
+<template>
+  <lightning-card>
+    <h1><strong>This is conditional Rendering</strong></h1>
+    <template if:false={showVisible}>
+      <div>To see the details click the below button</div>
+    </template>
+
+    <lightning-button
+      class="slds-button slds-button_brand"
+      title="Show Data"
+      label="Show Data"
+      onclick={changetotrue}
+      variant="brand"
+    ></lightning-button>
+
+    <template if:true={showVisible}>
+      <div>Here is the data that you are looking for</div>
+      <lightning-input
+        type="text"
+        label="Enter Hello"
+        value={input}
+        onkeyup={changetofalse}
+      ></lightning-input>
+    </template>
+  </lightning-card>
+</template>

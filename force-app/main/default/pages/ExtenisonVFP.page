@@ -1,0 +1,30 @@
+<apex:page standardcontroller="Account" Extensions="CExtension" >
+    <apex:form >
+        
+        <apex:pageblock title="Page Block 1">
+            <apex:pageblocksection title="Page Block 1 | custom controller">
+                <apex:pageblocksectionitem ><apex:commandbutton value="Greeting" action="{!showgreeting}" /></apex:pageblocksectionitem>
+                <apex:pageblocksectionitem ><apex:outputlabel > {!message}</apex:outputlabel></apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        
+        
+        <apex:pageblock title="page block section 2 | standard Controller">
+            <apex:pageblocksection title="SC" columns="2">
+                <apex:pageBlockSectionItem >New company: <apex:inputfield value="{!Account.Name}" required="false" /></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem ><apex:commandbutton value="standard save" action="{!save}"/></apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+            
+            
+            
+        <apex:pageblock title="heading of 3">
+            <apex:pageblocksection title="Page block section 3|using custom code" columns="2">
+                <apex:pageblocksectionitem >New company: <apex:inputtext value="{!VarforstoringAccountname}"/></apex:pageblocksectionitem>
+                <apex:pageblocksectionitem ><apex:commandbutton value="custom save" action="{!mysave}"/></apex:pageblocksectionitem> 
+            </apex:pageblocksection>
+        </apex:pageblock> 
+        
+       
+    </apex:form>
+</apex:page>

@@ -1,0 +1,32 @@
+<template>
+
+    <lightning-card>
+
+        this is my first Light component
+
+        <br>
+        <br>
+        <br>
+        
+        <lightning-button label="Survey" onclick={showsurveyhandler}></lightning-button>
+
+        <template if:true ={valueofthebutton}>
+
+        <lightning-input-rich-text label = "Tell us how was your Experience"></lightning-input-rich-text>
+
+        <lightning-button label="Submit" onclick={Thankyouhandler}></lightning-button>
+
+        </template>
+
+        <template if:true={valueofthesecondbutton}> 
+
+            Thanks for submitting the survey! Have a good day.
+            
+        </template>
+        
+</lightning-card> 
+          
+    
+   
+
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title = "Paitent Info" icon-name='Custom:custom56'>
+    
+        <template if:true={booleanflagvalue}>
+            <lightning-input type="text" label='First Name'></lightning-input>
+            <lightning-input type="text" label='last Name'></lightning-input>
+            <lightning-input type="text" label='Mobile'></lightning-input>
+            <lightning-input type="text" label='Email id'></lightning-input>
+            <lightning-input type="text" label='City'></lightning-input>
+
+            <lightning-button label='Hide Form' onclick={hideformhandler}></lightning-button>
+        </template>
+
+        <template if:false={booleanflagvalue}>
+            <lightning-button label='Show Form' onclick={showformhandler}></lightning-button>
+        </template>
+
+    </lightning-card>
+    
+</template>

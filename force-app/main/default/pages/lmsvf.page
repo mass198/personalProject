@@ -1,0 +1,41 @@
+<apex:page lightningStylesheets="true">
+<apex:slds />
+<div class="slds-scope">
+    <label>Enter Message here to publish</label>
+    <input class="slds-input" type="text" id="inpValue"/>
+    </div>
+    
+    <button  onclick="pubhandler()">publish</button>
+    <button  onclick="subhandler()">Subscribe</button>
+    <button  onclick="unsubhandler()">unsubscribe</button>
+    
+    <p>
+        message Recieved : 
+    </p> <div id="recValue">
+    
+    </div>
+    <script>
+    var subscription
+    let mychannel = "{!$MessageChannel.first__c}"
+   function pubhandler(){
+     let msg = document.getElementById("inpValue").value
+     const  message = {lmsData:{value:msg}}
+       sforce.one.publish(mychannel, message)
+       
+   }
+    
+    function subhandler(){
+   subscription = sforce.one.subscribe(mychannel, lsthandler, {scope:"APPLICATION"})
+    }
+    
+    function lsthandler(message){
+        let recValue = document.getElementById("recValue")
+        recValue.innerHTML = message && message.lmsData ? message.lmsData.value : "No Message found" 
+    }
+     function unsubhandler(){
+     sforce.one.unsubscribe(subscription)
+     subscription = null}
+    
+    
+    </script>
+</apex:page>

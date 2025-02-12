@@ -1,0 +1,23 @@
+<apex:page >
+   <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+            embeddedservice_bootstrap.init(
+                '00D1g0000000cX8',
+                'Messaging',
+                'https://globeandmail--staging.sandbox.my.site.com/ESWMessaging1718387162181',
+                {
+                    scrt2URL: 'https://globeandmail--staging.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+</script>
+
+<script type='text/javascript' src='https://globeandmail--staging.sandbox.my.site.com/ESWMessaging1718387162181/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</apex:page>

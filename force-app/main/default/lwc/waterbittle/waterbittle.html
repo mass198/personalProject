@@ -1,0 +1,18 @@
+<template>
+  <lightning-button
+    label="Get watterbottle Account"
+    onclick={makecallout}
+  ></lightning-button>
+
+  <template if:true={rspns}>
+    <p>The Request Status code is : {stats}</p>
+    <div></div>
+    <p>The Response is : {rspns}</p>
+  </template>
+  <template if:true={errr}>
+    <p>The Request Status code is : {stats}</p>
+
+    <div></div>
+    <p>The error is : {errr}</p>
+  </template>
+</template>

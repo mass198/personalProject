@@ -1,0 +1,28 @@
+<template>
+  <lightning-card>
+    <h1>
+      <strong style="color: red"
+        >This Data is coming from an Apex class(contactdatareturn) with
+        getSobjectValues function
+      </strong>
+    </h1>
+
+    <div>Id = {contId}</div>
+    <div>Name = {conName}</div>
+    <div>Email = {conEmail}</div>
+
+    <div>
+      <div>This Data is made imperatively on the button click</div>
+    </div>
+    <lightning-button label="Get Accounts" onclick={getlist} variant="brand"></lightning-button>
+    <template if:true={accounts}>
+      <template for:each={accounts} for:item="acc">
+        <div key={acc.id}> <p> name : {acc.Name}</p> </div>
+        
+      
+      </template>
+    </template>
+  </lightning-card>
+
+  
+</template>
