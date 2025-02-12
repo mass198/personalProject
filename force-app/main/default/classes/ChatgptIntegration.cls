@@ -1,6 +1,6 @@
 public class ChatgptIntegration {
 
-
+//public static final String openApiKey = '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';
     
     public static void makecalltogpt(string input){
 
